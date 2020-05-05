@@ -1,0 +1,12 @@
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\bin\Debug\netcoreapp3.1\Chatter.Domain.deps.json
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\bin\Debug\netcoreapp3.1\Chatter.Domain.dll
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\bin\Debug\netcoreapp3.1\Chatter.Domain.pdb
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\bin\Debug\netcoreapp3.1\Chatter.Common.dll
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\bin\Debug\netcoreapp3.1\Chatter.Common.pdb
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\obj\Debug\netcoreapp3.1\Chatter.Domain.csprojAssemblyReference.cache
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\obj\Debug\netcoreapp3.1\Chatter.Domain.csproj.CoreCompileInputs.cache
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\obj\Debug\netcoreapp3.1\Chatter.Domain.AssemblyInfoInputs.cache
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\obj\Debug\netcoreapp3.1\Chatter.Domain.AssemblyInfo.cs
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\obj\Debug\netcoreapp3.1\Chatter.Domain.csproj.CopyComplete
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\obj\Debug\netcoreapp3.1\Chatter.Domain.dll
+D:\projects\light-chatter\Chatter\src\Chatter.Domain\obj\Debug\netcoreapp3.1\Chatter.Domain.pdb

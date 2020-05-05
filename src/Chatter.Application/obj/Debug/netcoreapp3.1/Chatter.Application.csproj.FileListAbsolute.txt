@@ -1,0 +1,14 @@
+D:\projects\light-chatter\Chatter\src\Chatter.Application\obj\Debug\netcoreapp3.1\Chatter.Application.csprojAssemblyReference.cache
+D:\projects\light-chatter\Chatter\src\Chatter.Application\obj\Debug\netcoreapp3.1\Chatter.Application.csproj.CoreCompileInputs.cache
+D:\projects\light-chatter\Chatter\src\Chatter.Application\obj\Debug\netcoreapp3.1\Chatter.Application.AssemblyInfoInputs.cache
+D:\projects\light-chatter\Chatter\src\Chatter.Application\obj\Debug\netcoreapp3.1\Chatter.Application.AssemblyInfo.cs
+D:\projects\light-chatter\Chatter\src\Chatter.Application\bin\Debug\netcoreapp3.1\Chatter.Application.deps.json
+D:\projects\light-chatter\Chatter\src\Chatter.Application\bin\Debug\netcoreapp3.1\Chatter.Application.dll
+D:\projects\light-chatter\Chatter\src\Chatter.Application\bin\Debug\netcoreapp3.1\Chatter.Common.dll
+D:\projects\light-chatter\Chatter\src\Chatter.Application\bin\Debug\netcoreapp3.1\Chatter.Domain.dll
+D:\projects\light-chatter\Chatter\src\Chatter.Application\bin\Debug\netcoreapp3.1\Chatter.Common.pdb
+D:\projects\light-chatter\Chatter\src\Chatter.Application\bin\Debug\netcoreapp3.1\Chatter.Domain.pdb
+D:\projects\light-chatter\Chatter\src\Chatter.Application\obj\Debug\netcoreapp3.1\Chatter.Application.csproj.CopyComplete
+D:\projects\light-chatter\Chatter\src\Chatter.Application\bin\Debug\netcoreapp3.1\Chatter.Application.pdb
+D:\projects\light-chatter\Chatter\src\Chatter.Application\obj\Debug\netcoreapp3.1\Chatter.Application.dll
+D:\projects\light-chatter\Chatter\src\Chatter.Application\obj\Debug\netcoreapp3.1\Chatter.Application.pdb

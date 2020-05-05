@@ -1,0 +1,16 @@
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\bin\Debug\netcoreapp3.1\Chatter.Application.dll
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\bin\Debug\netcoreapp3.1\Chatter.Common.dll
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\bin\Debug\netcoreapp3.1\Chatter.Domain.dll
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\obj\Debug\netcoreapp3.1\Chatter.DAL.AssemblyInfoInputs.cache
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\obj\Debug\netcoreapp3.1\Chatter.DAL.AssemblyInfo.cs
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\obj\Debug\netcoreapp3.1\Chatter.DAL.csprojAssemblyReference.cache
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\obj\Debug\netcoreapp3.1\Chatter.DAL.csproj.CoreCompileInputs.cache
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\bin\Debug\netcoreapp3.1\Chatter.DAL.deps.json
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\bin\Debug\netcoreapp3.1\Chatter.DAL.dll
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\bin\Debug\netcoreapp3.1\Chatter.DAL.pdb
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\bin\Debug\netcoreapp3.1\Chatter.Application.pdb
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\bin\Debug\netcoreapp3.1\Chatter.Common.pdb
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\bin\Debug\netcoreapp3.1\Chatter.Domain.pdb
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\obj\Debug\netcoreapp3.1\Chatter.DAL.csproj.CopyComplete
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\obj\Debug\netcoreapp3.1\Chatter.DAL.dll
+D:\projects\light-chatter\Chatter\src\Chatter.DAL\obj\Debug\netcoreapp3.1\Chatter.DAL.pdb
