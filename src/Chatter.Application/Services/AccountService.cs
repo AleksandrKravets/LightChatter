@@ -1,9 +1,11 @@
 ﻿using Chatter.Application.Contracts.Repositories;
 using Chatter.Application.Contracts.Services;
+using Chatter.Application.Contracts.Validators;
 using Chatter.Application.DataTransferObjects.Account;
+using Chatter.Application.DataTransferObjects.Authorization;
 using Chatter.Application.DataTransferObjects.Users;
 using Chatter.Application.Infrastructure;
-using Chatter.Domain.Enums;
+using System;
 using System.Threading.Tasks;
 
 namespace Chatter.Application.Services
@@ -11,31 +13,47 @@ namespace Chatter.Application.Services
     public class AccountService : IAccountService
     {
         private readonly IUserRepository _userRepository;
-        // private readonly IPasswordValidator _passwordValidator;
+        private readonly ITokenService _tokenService;
+        private readonly IPasswordValidator _passwordValidator;
 
-        public AccountService(IUserRepository userRepository /*IPasswordValidator passwordValidator*/)
+        public AccountService(
+            IUserRepository userRepository, 
+            ITokenService tokenService, 
+            IPasswordValidator passwordValidator)
         {
-            _userRepository = userRepository;
-            //_passwordValidator = passwordValidator;
+            _tokenService = tokenService ?? throw new ArgumentNullException(nameof(tokenService));
+            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+            _passwordValidator = passwordValidator ?? throw new ArgumentNullException(nameof(passwordValidator));
         }
 
-        public Task RegisterAsync(RegistrationModel model)
+        public async Task<AuthenticationResult> RegisterAsync(RegistrationModel model)
         {
-            // Check if user with such email and nickname doesnt exist
-            // validate password using password validator
-            // Hash user password
-            // Create user
-            // Return response model
+            var user = await _userRepository.GetAsync(model.Email, model.Nickname);
 
-            var hashedPassword = SecurePasswordHasher.Hash(model.Password);
-
-            return _userRepository.CreateAsync(new CreateUserDto
+            if(user == null)
             {
-                Nickname = model.Nickname,
-                Email = model.Email,
-                HashedPassword = hashedPassword,
-                RoleId = (int)UserRole.Member
-            });
-        }
+                bool passwordValid = _passwordValidator.ValidatePassword(model.Password);
+
+                if (passwordValid)
+                {
+                    var hashedPassword = SecurePasswordHasher.Hash(model.Password);
+
+                    await _userRepository.CreateAsync(new CreateUserDto
+                    {
+                        Nickname = model.Nickname,
+                        Email = model.Email,
+                        HashedPassword = hashedPassword,
+                    });
+
+                    var createdUser = await _userRepository.GetUserByEmailAsync(model.Email);
+
+                    var result = await _tokenService.GenerateAuthenticationResultForUserAsync(createdUser);
+
+                    return result;
+                }
+            }
+
+            return AuthenticationResult.Failed();
+        }   
     }
 }

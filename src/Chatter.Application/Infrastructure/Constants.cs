@@ -4,7 +4,7 @@
     {
         public class CustomClaims
         {
-            public const string UserIdentifier = "UserId";
+            public const string UserIdentifier = "userid";
         }
     }
 }

@@ -2,15 +2,11 @@ using Chatter.API;
 using Chatter.Application;
 using Chatter.DAL;
 using Chatter.WebUI.Hubs;
-using Chatter.WebUI.Infrastructure;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
-using System.Threading.Tasks;
 
 namespace Chatter.WebUI
 {
@@ -41,9 +37,9 @@ namespace Chatter.WebUI
 
             app.UseRouting();
 
-            // app.UseAuthentication();
+            app.UseAuthentication();
 
-            // app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints => {
                 endpoints.MapHub<ChatHub>("/chatHub");

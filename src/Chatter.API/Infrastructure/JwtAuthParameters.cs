@@ -7,7 +7,6 @@ namespace Chatter.WebUI.Infrastructure
 {
     internal class JwtAuthParameters : TokenValidationParameters
     {
-
         public JwtAuthParameters(IConfiguration configuration)
         {
             ValidateAudience = true;

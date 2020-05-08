@@ -15,6 +15,15 @@ namespace Chatter.DAL.Repositories
             _procedureExecutor = procedureExecutor;
         }
 
+        public Task<UserModel> GetAsync(string email, string nickname)
+        {
+            return _procedureExecutor.ExecuteWithObjectResponseAsync<UserModel>(new SPGetUser
+            {
+                Email = email, 
+                Nickname = nickname
+            });
+        }
+
         public Task<int> CreateAsync(CreateUserDto model)
         {
             return _procedureExecutor.ExecuteAsync(new SPCreateUser
@@ -22,15 +31,22 @@ namespace Chatter.DAL.Repositories
                 Nickname = model.Nickname, 
                 Email = model.Email, 
                 HashedPassword = model.HashedPassword, 
-                RoleId = model.RoleId
             });
         }
 
-        public Task<UserModel> GetUserByEmail(string email)
+        public Task<UserModel> GetUserByEmailAsync(string email)
         {
             return _procedureExecutor.ExecuteWithObjectResponseAsync<UserModel>(new SPGetUserByEmail 
             { 
                 Email = email 
+            });
+        }
+
+        public Task<UserModel> GetAsync(long userId)
+        {
+            return _procedureExecutor.ExecuteWithObjectResponseAsync<UserModel>(new SPGetUserById 
+            { 
+                Id = userId 
             });
         }
     }

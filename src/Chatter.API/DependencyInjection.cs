@@ -51,6 +51,7 @@ namespace Chatter.API
                             {
                                 context.Response.Headers.Add("Token-Expired", "true");
                             }
+
                             return Task.CompletedTask;
                         }
                     };

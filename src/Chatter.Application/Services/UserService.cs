@@ -16,9 +16,20 @@ namespace Chatter.Application.Services
                 userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
 
-        public async Task<bool> CheckIfUserExistsAsync(string email)
+        public Task<UserModel> GetAsync(string email)
         {
-            return (await _userRepository.GetUserByEmail(email)) != null;   
+            return _userRepository.GetUserByEmailAsync(email);   
+        }
+
+        public Task<UserModel> GetAsync(long userId)
+        {
+            return _userRepository.GetAsync(userId);
+        }
+
+        public async Task<bool> CheckIfExistsAsync(string email)
+        {
+            var user = await GetAsync(email);
+            return user == null;
         }
     }
 }

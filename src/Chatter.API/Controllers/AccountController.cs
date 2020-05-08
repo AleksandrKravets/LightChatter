@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace Chatter.WebUI.Controllers
 {
-    // POST http://localhost:59864/api/account { Email:string, Password:string, Nickname:string }
-    // POST http://localhost:59864/api/account/exists/email:string
-
     [Route("api/account")]
     public class AccountController : ControllerBase
     {
@@ -24,15 +21,19 @@ namespace Chatter.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Register([FromBody]RegistrationModel model)
         {
-            await _accountService.RegisterAsync(model);
-            return Ok();
+            if (model == null || !ModelState.IsValid)
+                return BadRequest("Model has not been passed.");
+
+            var result = await _accountService.RegisterAsync(model);
+
+            return Ok(result);
         }    
 
         [HttpGet]
-        [Route("exists/{email:string}")]
+        [Route("exists/{email}")]
         public async Task<IActionResult> CheckIfUserExists(string email)
         {
-            var result = await _userService.CheckIfUserExistsAsync(email);
+            var result = await _userService.CheckIfExistsAsync(email);
             return Ok(result);
         }
     }

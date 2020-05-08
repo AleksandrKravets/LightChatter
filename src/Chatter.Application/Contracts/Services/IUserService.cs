@@ -5,6 +5,8 @@ namespace Chatter.Application.Contracts.Services
 {
     public interface IUserService
     {
-        Task<bool> CheckIfUserExistsAsync(string email);
+        Task<UserModel> GetAsync(string email);
+        Task<UserModel> GetAsync(long userId);
+        Task<bool> CheckIfExistsAsync(string email);
     }
 }

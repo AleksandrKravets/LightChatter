@@ -1,10 +1,11 @@
-﻿using Chatter.Domain.Dto;
+﻿using Chatter.Application.DataTransferObjects.Tokens;
+using Chatter.Application.DataTransferObjects.Users;
+using System.Threading.Tasks;
 
 namespace Chatter.Application.Contracts.Factories
 {
     public interface ITokenFactory
     {
-        //AccessToken GetAccessToken(User user);
-        //Domain.Dto.RefreshToken GetRefreshToken(int size = 32);
+        Task<TokensModel> GetTokensAsync(UserModel user);
     }
 }

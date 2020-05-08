@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Chatter.Domain.Dto
+namespace Chatter.Application.DataTransferObjects.Authorization
 {
-    public class RefreshTokenRequestModel
+    public class RefreshTokensModel
     {
         [Required]
         public string AccessToken { get; set; }

@@ -1,5 +1,4 @@
 ﻿using Chatter.Common.ConfigurationModels;
-using CSharpFunctionalExtensions;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
@@ -10,7 +9,7 @@ namespace Chatter.Application.Helpers
 {
     public static class JwtHelper
     {
-        public static Maybe<ClaimsPrincipal> GetPrincipalFromExpiredToken(string token, JwtSettings jwtSettings)
+        public static ClaimsPrincipal GetPrincipalFromExpiredToken(string token, JwtSettings jwtSettings)
         {
             var validationParameters = new TokenValidationParameters
             {
@@ -22,21 +21,34 @@ namespace Chatter.Application.Helpers
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey)),
                 ValidateLifetime = true,
                 RequireExpirationTime = true, 
-                ClockSkew = TimeSpan.Zero
+                ClockSkew = TimeSpan.Zero 
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
 
             SecurityToken securityToken;
             
-            var principal = tokenHandler.ValidateToken(token, validationParameters, out securityToken);
+            try
+            {
+                var principal = tokenHandler.ValidateToken(token, validationParameters, out securityToken);
 
-            var jwtSecurityToken = securityToken as JwtSecurityToken;
+                var jwtSecurityToken = securityToken as JwtSecurityToken;
 
-            if (jwtSecurityToken == null || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
-                return Maybe<ClaimsPrincipal>.None;
+                if (jwtSecurityToken == null || !IsJwtWithValidSecurityAlgorithm(jwtSecurityToken))
+                    return null;
 
-            return principal;
+                return principal;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private static bool IsJwtWithValidSecurityAlgorithm(JwtSecurityToken jwtSecurityToken)
+        {
+            return jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256,
+                       StringComparison.InvariantCultureIgnoreCase);
         }
     }
 }

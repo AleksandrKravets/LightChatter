@@ -6,3 +6,4 @@ D:\projects\light-chatter\Chatter\src\Chatter.Common\obj\Debug\netcoreapp3.1\Cha
 D:\projects\light-chatter\Chatter\src\Chatter.Common\obj\Debug\netcoreapp3.1\Chatter.Common.AssemblyInfo.cs
 D:\projects\light-chatter\Chatter\src\Chatter.Common\obj\Debug\netcoreapp3.1\Chatter.Common.dll
 D:\projects\light-chatter\Chatter\src\Chatter.Common\obj\Debug\netcoreapp3.1\Chatter.Common.pdb
+D:\projects\light-chatter\Chatter\src\Chatter.Common\obj\Debug\netcoreapp3.1\Chatter.Common.csprojAssemblyReference.cache

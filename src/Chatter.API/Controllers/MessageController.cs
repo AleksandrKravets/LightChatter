@@ -9,12 +9,6 @@ using System.Threading.Tasks;
 
 namespace Chatter.WebUI.Controllers
 {
-    // POST http://localhost:59864/api/messages { Text:string, SenderId:long }
-    // GET http://localhost:59864/api/messages
-    // GET http://localhost:59864/api/messages/id:long
-    // DELETE http://localhost:59864/api/messages/id:long
-    // PUT http://localhost:59864/api/messages/id:long { Text:string }
-
     [Route("api/messages")]
     [ApiController]
     public class MessageController : Controller
@@ -24,8 +18,8 @@ namespace Chatter.WebUI.Controllers
 
         public MessageController(IMessageService messageService, IHubContext<ChatHub> chat)
         {
-            _messageService = messageService;
-            _chat = chat;
+            _messageService = messageService ?? throw new ArgumentNullException(nameof(messageService));
+            _chat = chat ?? throw new ArgumentNullException(nameof(chat));
         }
 
         [HttpGet]
@@ -72,6 +66,7 @@ namespace Chatter.WebUI.Controllers
                 return BadRequest();
 
             await _messageService.UpdateAsync(id, model);
+
             return Ok();
         }
     }

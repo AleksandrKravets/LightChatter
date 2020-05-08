@@ -12,8 +12,7 @@ namespace Chatter.DAL
             services.AddTransient<StoredProcedureExecutor>();
             services.AddTransient<IMessageRepository, MessageRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
-
-            // services.AddTransient<ITokenRepository, TokenRepository>();
+            services.AddTransient<ITokenRepository, TokenRepository>();
 
             return services;
         }
